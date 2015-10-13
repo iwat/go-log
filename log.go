@@ -28,3 +28,87 @@ func Init(verbose, veryVerbose bool) {
 		DBG = internal.New(os.Stdout, "DBG ", internal.LstdFlags|internal.Lshortfile)
 	}
 }
+
+func Trace(v ...interface{}) {
+	TRC.Print(v...)
+}
+
+func Tracef(format string, v ...interface{}) {
+	TRC.Printf(format, v...)
+}
+
+func Traceln(v ...interface{}) {
+	TRC.Println(v...)
+}
+
+func Debug(v ...interface{}) {
+	DBG.Print(v...)
+}
+
+func Debugf(format string, v ...interface{}) {
+	DBG.Printf(format, v...)
+}
+
+func Debugln(v ...interface{}) {
+	DBG.Println(v...)
+}
+
+func Info(v ...interface{}) {
+	NFO.Print(v...)
+}
+
+func Infof(format string, v ...interface{}) {
+	NFO.Printf(format, v...)
+}
+
+func Infoln(v ...interface{}) {
+	NFO.Println(v...)
+}
+
+func Warning(v ...interface{}) {
+	WRN.Print(v...)
+}
+
+func Warningf(format string, v ...interface{}) {
+	WRN.Printf(format, v...)
+}
+
+func Warningln(v ...interface{}) {
+	WRN.Println(v...)
+}
+
+func Error(v ...interface{}) {
+	ERR.Print(v...)
+}
+
+func Errorf(format string, v ...interface{}) {
+	ERR.Printf(format, v...)
+}
+
+func Errorln(v ...interface{}) {
+	ERR.Println(v...)
+}
+
+func Fatal(v ...interface{}) {
+	ERR.Fatal(v...)
+}
+
+func Fatalf(format string, v ...interface{}) {
+	ERR.Fatalf(format, v...)
+}
+
+func Fatalln(v ...interface{}) {
+	ERR.Fatalln(v...)
+}
+
+func Panic(v ...interface{}) {
+	ERR.Panic(v...)
+}
+
+func Panicf(format string, v ...interface{}) {
+	ERR.Panicf(format, v...)
+}
+
+func Panicln(v ...interface{}) {
+	ERR.Panicln(v...)
+}

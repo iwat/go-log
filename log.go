@@ -1,6 +1,7 @@
 package log
 
 import (
+	"fmt"
 	"io/ioutil"
 	internal "log"
 	"os"
@@ -30,85 +31,94 @@ func Init(verbose, veryVerbose bool) {
 }
 
 func Trace(v ...interface{}) {
-	TRC.Print(v...)
+	TRC.Output(3, fmt.Sprint(v...))
 }
 
 func Tracef(format string, v ...interface{}) {
-	TRC.Printf(format, v...)
+	TRC.Output(3, fmt.Sprintf(format, v...))
 }
 
 func Traceln(v ...interface{}) {
-	TRC.Println(v...)
+	TRC.Output(3, fmt.Sprintln(v...))
 }
 
 func Debug(v ...interface{}) {
-	DBG.Print(v...)
+	DBG.Output(3, fmt.Sprint(v...))
 }
 
 func Debugf(format string, v ...interface{}) {
-	DBG.Printf(format, v...)
+	DBG.Output(3, fmt.Sprintf(format, v...))
 }
 
 func Debugln(v ...interface{}) {
-	DBG.Println(v...)
+	DBG.Output(3, fmt.Sprintln(v...))
 }
 
 func Info(v ...interface{}) {
-	NFO.Print(v...)
+	NFO.Output(3, fmt.Sprint(v...))
 }
 
 func Infof(format string, v ...interface{}) {
-	NFO.Printf(format, v...)
+	NFO.Output(3, fmt.Sprintf(format, v...))
 }
 
 func Infoln(v ...interface{}) {
-	NFO.Println(v...)
+	NFO.Output(3, fmt.Sprintln(v...))
 }
 
 func Warn(v ...interface{}) {
-	WRN.Print(v...)
+	WRN.Output(3, fmt.Sprint(v...))
 }
 
 func Warnf(format string, v ...interface{}) {
-	WRN.Printf(format, v...)
+	WRN.Output(3, fmt.Sprintf(format, v...))
 }
 
 func Warnln(v ...interface{}) {
-	WRN.Println(v...)
+	WRN.Output(3, fmt.Sprintln(v...))
 }
 
 func Error(v ...interface{}) {
-	ERR.Print(v...)
+	ERR.Output(3, fmt.Sprint(v...))
 }
 
 func Errorf(format string, v ...interface{}) {
-	ERR.Printf(format, v...)
+	ERR.Output(3, fmt.Sprintf(format, v...))
 }
 
 func Errorln(v ...interface{}) {
-	ERR.Println(v...)
+	ERR.Output(3, fmt.Sprintln(v...))
 }
 
 func Fatal(v ...interface{}) {
-	ERR.Fatal(v...)
+	ERR.Output(3, fmt.Sprint(v...))
+	os.Exit(1)
 }
 
 func Fatalf(format string, v ...interface{}) {
-	ERR.Fatalf(format, v...)
+	ERR.Output(3, fmt.Sprintf(format, v...))
+	os.Exit(1)
 }
 
 func Fatalln(v ...interface{}) {
-	ERR.Fatalln(v...)
+	ERR.Output(3, fmt.Sprintln(v...))
+	os.Exit(1)
 }
 
 func Panic(v ...interface{}) {
-	ERR.Panic(v...)
+	s := fmt.Sprint(v...)
+	ERR.Output(3, s)
+	panic(s)
 }
 
 func Panicf(format string, v ...interface{}) {
-	ERR.Panicf(format, v...)
+	s := fmt.Sprintf(format, v...)
+	ERR.Output(3, s)
+	panic(s)
 }
 
 func Panicln(v ...interface{}) {
-	ERR.Panicln(v...)
+	s := fmt.Sprintln(v...)
+	ERR.Output(3, s)
+	panic(s)
 }

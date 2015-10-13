@@ -65,15 +65,15 @@ func Infoln(v ...interface{}) {
 	NFO.Println(v...)
 }
 
-func Warning(v ...interface{}) {
+func Warn(v ...interface{}) {
 	WRN.Print(v...)
 }
 
-func Warningf(format string, v ...interface{}) {
+func Warnf(format string, v ...interface{}) {
 	WRN.Printf(format, v...)
 }
 
-func Warningln(v ...interface{}) {
+func Warnln(v ...interface{}) {
 	WRN.Println(v...)
 }
 

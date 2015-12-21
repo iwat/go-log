@@ -1,3 +1,11 @@
+// go-log - Simple log facility for all related projects
+
+// Copyright (c) 2015 Chaiwat Shuetrakoonpaiboon. All rights reserved.
+//
+// Use of this source code is governed by a MIT license that can be found in
+// the LICENSE file.
+
+// Package log provides simple log facility for all related projects.
 package log
 
 import (

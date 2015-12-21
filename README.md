@@ -1,3 +1,9 @@
+Warning
+-------
+
+I stopped developing this library as I had switched to use github.com/inconshreveable/log15
+instead.
+
 go-log
 ======
 
